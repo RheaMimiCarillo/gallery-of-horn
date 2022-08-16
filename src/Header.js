@@ -6,11 +6,9 @@ class Header extends React.Component{
   render()
   {
     return(
-      <>
-        <Header>
+        <header>
           <h1>Gallery of Horn</h1>
-        </Header>
-      </>
+        </header>
     );
   }
 }
