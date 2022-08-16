@@ -37,9 +37,11 @@ class Main extends React.Component{
       }
     ];
 
+    
   render()
   {
     return(
+      
       <main>
         {
           this.beastArr.map(currentBeast =>
@@ -51,6 +53,16 @@ class Main extends React.Component{
             />
           ))
         }
+        {/* let beastArr2 = [];
+
+        beastArr.forEach((beast,idx) => {
+        beastArr2.push(
+          <HornedBeast
+            title = {beast.title}
+            imageURL = {beast.image_url}
+            description = {beast.description}
+          />
+        )} */}
       </main>
     );
   }
