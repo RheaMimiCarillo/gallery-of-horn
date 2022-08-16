@@ -15,7 +15,7 @@ class HornedBeast extends React.Component{
         </img>
 
         {/* description of animal */}
-        <p>{this.props.description}</p>        
+        <p>{this.props.description}</p>
       </>
     );
   }
