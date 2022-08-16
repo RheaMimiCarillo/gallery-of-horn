@@ -10,7 +10,8 @@ class Main extends React.Component{
     // iterate through the array and render a <HornedBeast> element with props of each
     return(
       <>
-        <HornedBeast></HornedBeast>
+        <HornedBeast></HornedBeast> 
+        {/* props */}
       </>
     );
   }
