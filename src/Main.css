@@ -1,11 +1,17 @@
 *{
     box-sizing: border-box;
 }
-
+/* maybe make this not flex and space around like this? */
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.hornedBeast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /* use media queries */

@@ -43,9 +43,9 @@ class Main extends React.Component{
 // this is supposed to save the json array into a local array
 // will test when I get to my laptop charger
 importedBeastArr = this.props.beastsJSON;
-    
+
   render()
-  {
+  { 
     return(
       <main>
         {
