@@ -2,3 +2,18 @@
     box-sizing: border-box;
 }
 
+.hornedBeast {
+    border: 1px solid gray;
+}
+
+.hornedBeast h2 {
+    font-size: 2vw;
+}
+
+.hornedBeast p {
+    font-size: 1.5vw;
+    margin: auto;
+    display: inline-block;
+    margin-bottom: .5vw;
+}
+

@@ -8,10 +8,4 @@ main {
     justify-content: space-around;
 }
 
-.hornedBeast {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 /* use media queries */
