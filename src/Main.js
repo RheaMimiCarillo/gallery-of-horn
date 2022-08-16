@@ -70,3 +70,6 @@ class Main extends React.Component{
 }
 
 export default Main;
+
+
+note! use Card react component
