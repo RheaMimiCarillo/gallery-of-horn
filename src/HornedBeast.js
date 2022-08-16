@@ -49,31 +49,4 @@ class HornedBeast extends React.Component{
   }
 }
 
-
-// will make button green
-
-// event handler for button
-// this'd be in the component class
-needsHelp = () => {
-  this.setState({
-    helpMe: true,
-  });
-};
-
-// this'd be in the render() part of the component
-// button with onClick event listener
-// we'd use a different eventHandler for actual labs
-/* <Button className={'div-Button'} variant="success" onClick={this.needsHelp}>Good Job!</Button>
-*/
-/*
-<div> {helpMe ? 'Ineed help' : ''}
-  </div> 
-*/
-
-voted = () => {
-  this.setState(
-    needsVote
-  )
-}
-
 export default HornedBeast;
