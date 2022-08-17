@@ -24,7 +24,8 @@ class App extends React.Component
 
   // function to set state of showwModal to false
 
-
+  // use the State in App.js to render a SelectedBeast in a modal window
+  
   // TODO: renders a `Header`, `Footer`, and `Main` in the App component
   render()
   {

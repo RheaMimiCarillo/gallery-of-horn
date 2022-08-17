@@ -6,18 +6,18 @@
     border: 1px solid gray;
 }
 
-.hornedBeast h2 {
+.hornedBeast .card-title {
     font-size: 2vw;
 }
 
-.hornedBeast p {
-    font-size: 1vw;
+.hornedBeast .card-text {
+    font-size: 1rem;
     margin: auto;
     display: inline-block;
     margin-bottom: .5vw;
 }
 
-.imgContainer {
+.hornedBeast .card-img {
     position: relative;
     border: 1vh solid wheat;
     border-radius: 1%;
@@ -37,7 +37,7 @@
     backdrop-filter: blur(6px);
 }
 
-.imgContainer:hover {
+.hornedBeast .card-img:hover {
     cursor: pointer;
     border-color: aqua;
 }

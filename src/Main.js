@@ -47,6 +47,9 @@ importedBeastArr = this.props.beastsJSON;
   render()
   { 
     return(
+      // add bootstrap <Col> and <Row>
+      // use bootstrap class to style the <Col> and <Row> to make them responsive
+      // give the Card a class of 'h-100' to have them take up the entire vertical space of each card
       <main>
         {
           this.importedBeastArr.map((currentBeast, idx) =>
