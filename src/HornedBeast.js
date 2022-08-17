@@ -8,7 +8,7 @@ class HornedBeast extends React.Component{
     super(props)
     this.state = {
       // count number of times beast image is clicked
-      favorites = 0,
+      favorites: 0,
     }
   }
 
@@ -30,18 +30,21 @@ class HornedBeast extends React.Component{
       <div className="hornedBeast">
         {/* title of animal */}
         <h2>{this.props.title}</h2>
+        <div className='imgContainer'>
+          {/* image of animal */}
+          <img 
+            src={this.props.imageURL} 
+            alt={this.props.description} 
+            title={this.props.title}
+            favorites={this.state.favorites}
+            onClick={this.handleFavorites}
+          />
+          {/* p to display votes for each beast */}
+          <p className='heart'>{this.state.favorites}🖤</p>
+        </div>
+        
 
-        {/* image of animal */}
-        <img 
-          src={this.props.imageURL} 
-          alt={this.props.description} 
-          title={this.props.title}
-          favorites={this.state.favorites}
-          onClick={this.handleFavorites}
-        />
-
-        {/* p to display votes for each beast */}
-        <p>{this.state.favorites} put heart icon 🖤 somewhere here for how many favorites each picture has</p>
+        
         {/* description of animal */}
         <p>{this.props.description}</p>
       </div>

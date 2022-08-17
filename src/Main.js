@@ -1,7 +1,7 @@
 // renders <Main> element
 import React from 'react';
 import HornedBeast from './HornedBeast';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 
 
 
@@ -74,6 +74,3 @@ importedBeastArr = this.props.beastsJSON;
 }
 
 export default Main;
-
-
-note! use Card react component

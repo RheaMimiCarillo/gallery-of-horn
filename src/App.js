@@ -4,7 +4,7 @@ import './App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import beastsJSON from '.data.json';
+import beastsJSON from './data.json';
 
 class App extends React.Component
 {
