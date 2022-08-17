@@ -1,13 +1,15 @@
-
 import React from 'react';
-import './App.css';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
-import beastsJSON from './data.json';
 
 // import modal from react bootstrap
 import Modal from 'react-bootstrap/Modal';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+
+// Import the `data.json` file into your `App`
+import beastsJSON from './data.json';
+
+import './App.css';
 
 class App extends React.Component
 {
@@ -32,15 +34,29 @@ class App extends React.Component
     return (
       <>
         <Header/>
-        <Main beastsJSON={beastsJSON} />
+        <Main 
+          // send imported data into the Main component
+          beastsJSON={beastsJSON} 
+
+          // Send a function into your Main component that allows the user to update state in the App
+
+          handleShowModal={this.handleShowModal}
+
+          handleHideModal={this.handleHideModal}
+
+        />
         <Footer/>
         <Modal 
           // display the modal or hide the modal
           show={this.state.showModal}
 
           // when modal hides, set state to false
-          onHIde={this.handleHideModal}
-        />
+          onHide={this.handleHideModal}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>{this.state.name}</Modal.Title>
+          </Modal.Header>
+        </Modal>
       </>
     );
   }
