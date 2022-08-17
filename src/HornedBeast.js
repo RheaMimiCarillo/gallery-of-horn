@@ -1,4 +1,5 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
 
 // import Card component
 import Card from 'react-bootstrap/Card';
@@ -30,39 +31,26 @@ class HornedBeast extends React.Component{
   render()
   {
     return(
-      
-      // <div className="hornedBeast">
-      //   {/* title of animal */}
-      //   <h2>{this.props.title}</h2>
-      //   <div className='imgContainer'>
-      //     {/* image of animal */}
-      //     <img 
-      //       src={this.props.imageURL} 
-      //       alt={this.props.description} 
-      //       title={this.props.title}
-      //       favorites={this.state.favorites}
-      //       onClick={this.handleFavorites}
-      //     />
-      //     {/* p to display votes for each beast */}
-      //     <p className='heart'>🖤{this.state.favorites}</p>
-      //   </div>
-      //   {/* description of animal */}
-      //   <p>{this.props.description}</p>
-      // </div>
-      <Card className='hornedBeast' style={{width: '18rem'}}>
+      <Col className='mt-4'>
+        <Card className='hornedBeast h-100 p-1'>
         <Card.Img 
           variant='top' 
           src={this.props.imageURL} 
           alt={this.props.description}
           favorites={this.state.favorites}
+
+          // make images take up full width
+          className='img-responsive'
           onClick={this.handleFavorites}
         />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
-          <Card.Text>🖤{this.state.favorites}</Card.Text>
+          <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
         </Card.Body>
       </Card>
+      </Col>
+      
     );
   }
 }

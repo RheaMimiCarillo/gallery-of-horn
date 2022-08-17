@@ -1,11 +1,11 @@
 *{
     box-sizing: border-box;
 }
-/* maybe make this not flex and space around like this? */
-main {
+
+/* main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
+} */
 
 /* use media queries */
