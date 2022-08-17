@@ -72,25 +72,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Class 02 lab
 
 **Time Estimates**
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
 
 Feature #1: Display images
 ________________________________
 
 Estimate of time needed to complete: 1.5 hours
 
-Start time: _____
+Start time: 1:20 p.m.
 
-Finish time: _____
+Finish time: 7:40 p.m.
 
 Actual time needed to complete: _____
 
@@ -100,9 +90,9 @@ ________________________________
 
 Estimate of time needed to complete: 1.5 hours
 
-Start time: _____
+Start time: 1:50 p.m.
 
-Finish time: _____
+Finish time: 7:40 p.m.
 
 Actual time needed to complete: _____
 
@@ -112,9 +102,9 @@ ________________________________
 
 Estimate of time needed to complete: 2.5 hours
 
-Start time: _____
+Start time: 1:25 p.m.
 
-Finish time: _____
+Finish time: 
 
 Actual time needed to complete: _____
 

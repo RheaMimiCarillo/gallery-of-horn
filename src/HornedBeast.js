@@ -40,7 +40,7 @@ class HornedBeast extends React.Component{
             onClick={this.handleFavorites}
           />
           {/* p to display votes for each beast */}
-          <p className='heart'>{this.state.favorites}🖤</p>
+          <p className='heart'>🖤{this.state.favorites}</p>
         </div>
         
 

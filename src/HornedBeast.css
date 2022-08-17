@@ -21,6 +21,7 @@
     position: relative;
     border: 1vh solid wheat;
     border-radius: 1%;
+    display: inline-block;
 }
 
 .imgContainer img {
