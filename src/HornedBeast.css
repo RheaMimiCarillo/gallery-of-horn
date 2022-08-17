@@ -11,7 +11,7 @@
 }
 
 .hornedBeast p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: auto;
     display: inline-block;
     margin-bottom: .5vw;
@@ -22,11 +22,6 @@
     border: 1vh solid wheat;
     border-radius: 1%;
     display: inline-block;
-}
-
-.imgContainer img {
-    /* display: inline-block; */
-    
 }
 
 .heart {
@@ -41,6 +36,7 @@
     /* blurry background color https://stackoverflow.com/a/58083568 */
     backdrop-filter: blur(6px);
 }
+
 .imgContainer:hover {
     cursor: pointer;
     border-color: aqua;
