@@ -1,4 +1,7 @@
 import React from 'react';
+
+// import Card component
+import Card from 'react-bootstrap/Card';
 import './HornedBeast.css';
 
 class HornedBeast extends React.Component{
@@ -7,73 +10,61 @@ class HornedBeast extends React.Component{
   {
     super(props)
     this.state = {
-      votes = 0,
+      // count number of times beast image is clicked
+      favorites: 0,
     }
   }
 
-  // handle votes
-  handleVotes = () =>
+  // event handler
+  handleFavorites = () => 
   {
-    // code that wil update the state of the voting counter
+    // code that wil update the state of the favorites counter
     
     // built in method to set state
-    this.setState(
-      {
-        votes: this.state.votes + 1,
-      }
-    );
+    this.setState
+    ({
+      favorites: this.state.favorites + 1,
+    });
   };
-  
-  render(){
+
+  render()
+  {
     return(
-      <div className="hornedBeast">
-        {/* title of animal */}
-        <h2>{this.props.title}</h2>
-
-        {/* image of animal */}
-        <img 
+      
+      // <div className="hornedBeast">
+      //   {/* title of animal */}
+      //   <h2>{this.props.title}</h2>
+      //   <div className='imgContainer'>
+      //     {/* image of animal */}
+      //     <img 
+      //       src={this.props.imageURL} 
+      //       alt={this.props.description} 
+      //       title={this.props.title}
+      //       favorites={this.state.favorites}
+      //       onClick={this.handleFavorites}
+      //     />
+      //     {/* p to display votes for each beast */}
+      //     <p className='heart'>🖤{this.state.favorites}</p>
+      //   </div>
+      //   {/* description of animal */}
+      //   <p>{this.props.description}</p>
+      // </div>
+      <Card className='hornedBeast' style={{width: '18rem'}}>
+        <Card.Img 
+          variant='top' 
           src={this.props.imageURL} 
-          alt={this.props.description} 
-          title={this.props.title}
-          onClick={this.handleVotes}
-        >
-          {this.state.votes}
-        </img>
-
-        {/* p to display votes for each beast */}
-        <p>{this.state.votes} put heart icon 🖤 somewhere here votes</p>
-        {/* description of animal */}
-        <p>{this.props.description}</p>
-      </div>
+          alt={this.props.description}
+          favorites={this.state.favorites}
+          onClick={this.handleFavorites}
+        />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+          <Card.Text>🖤{this.state.favorites}</Card.Text>
+        </Card.Body>
+      </Card>
     );
   }
-}
-
-
-// will make button green
-
-// event handler for button
-// this'd be in the component class
-needsHelp = () => {
-  this.setState({
-    helpMe: true,
-  });
-};
-
-// this'd be in the render() part of the component
-// button with onClick event listener
-// we'd use a different eventHandler for actual labs
-/* <Button className={'div-Button'} variant="success" onClick={this.needsHelp}>Good Job!</Button>
-*/
-/*
-<div> {helpMe ? 'Ineed help' : ''}
-  </div> 
-*/
-
-voted = () => {
-  this.setState(
-    needsVote
-  )
 }
 
 export default HornedBeast;

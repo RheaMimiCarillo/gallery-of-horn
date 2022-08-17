@@ -1,3 +1,43 @@
 * {
     box-sizing: border-box;
 }
+
+.hornedBeast {
+    border: 1px solid gray;
+}
+
+.hornedBeast h2 {
+    font-size: 2vw;
+}
+
+.hornedBeast p {
+    font-size: 1vw;
+    margin: auto;
+    display: inline-block;
+    margin-bottom: .5vw;
+}
+
+.imgContainer {
+    position: relative;
+    border: 1vh solid wheat;
+    border-radius: 1%;
+    display: inline-block;
+}
+
+.heart {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 10% 25%;
+
+    /* blurry background color https://stackoverflow.com/a/58083568 */
+    backdrop-filter: blur(6px);
+}
+
+.imgContainer:hover {
+    cursor: pointer;
+    border-color: aqua;
+}

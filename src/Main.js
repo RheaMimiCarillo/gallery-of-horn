@@ -1,12 +1,13 @@
 // renders <Main> element
 import React from 'react';
 import HornedBeast from './HornedBeast';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 
 
 
 // render copies of HornedBeast component
 class Main extends React.Component{
+/*
   // wasn't sure whether to make this global or put it in the class
   beastArr = 
     [
@@ -37,15 +38,18 @@ class Main extends React.Component{
         "horns": 1
       }
     ];
+*/
 
-    
+// this is supposed to save the json array into a local array
+// will test when I get to my laptop charger
+importedBeastArr = this.props.beastsJSON;
+
   render()
-  {
+  { 
     return(
-      
       <main>
         {
-          this.beastArr.map(currentBeast =>
+          this.importedBeastArr.map(currentBeast =>
           (
             <HornedBeast
               title = {currentBeast.title}
