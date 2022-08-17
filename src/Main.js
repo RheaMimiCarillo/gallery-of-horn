@@ -49,9 +49,11 @@ importedBeastArr = this.props.beastsJSON;
     return(
       <main>
         {
-          this.importedBeastArr.map(currentBeast =>
+          this.importedBeastArr.map((currentBeast, idx) =>
           (
             <HornedBeast
+              // react likes each component to have a key 
+              key={idx}
               title = {currentBeast.title}
               imageURL = {currentBeast.image_url}
               description = {currentBeast.description}
