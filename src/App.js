@@ -1,10 +1,10 @@
 import React from 'react';
 
-// import modal from react bootstrap
-import Modal from 'react-bootstrap/Modal';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import SelectedBeast from './SelectedBeast'
+
 
 // Import the `data.json` file into your `App`
 import beastsJSON from './data.json';
@@ -55,17 +55,25 @@ class App extends React.Component
           // send imported data into the Main component
           beastsJSON={beastsJSON} 
 
-          // Send a function into your Main component that allows the user to update state in the App
-
+          // pass in reference to event handler that makes the modal thingy appear
           handleShowModal={this.handleShowModal}
 
         />
         <Footer/>
-        {/* move Modal to the Selected Beast js file and use the shorthand <Modal/> to pass in props to it */}
-        <Modal 
-          // prop to pass `showModal` state to Modal
+
+        {/* pass props I want to use on the modal thing into <SelectedBeast /> */}
+        <SelectedBeast
+          // pass in beasts data
+          beastsJSON={beastsJSON}
+
+          // note from tired self: instead of making individual states for each bit of data I want to render in the Modal thingy, just use a property as a unique key from the JSON and then have the SelectedBeast component get the rest of the data from the array using that key.. also, see if this is a good idea in the morning, because I'd have to run a loop to look for each lil bit of data using the key
+          // pass in name of the beast user clicked on
+          selectedBeastName={this.selectedBeastName}
+
+          // pass in showModal state
           show={this.state.showModal}
-          // when modal is hidden, use handleHideModal to set the `showModal` state in App.js to `false'
+
+          // pass in reference to handleHideModal (for when a user wants to exit out of a Modal thingy)
           onHide={this.handleHideModal}
         />
       </>

@@ -22,7 +22,7 @@ class HornedBeast extends React.Component{
   {
     // code that wil update the state of the favorites counter
     
-    // built in method to set state
+    // built in React method to set state
     this.setState
     ({
       favorites: this.state.favorites + 1,
@@ -33,7 +33,7 @@ class HornedBeast extends React.Component{
   handleBeastClick = () =>
   {
     // reference to the handleShowModal() function passed down from props
-    this.props.handleShowModal(this.props.selectedBeastName);
+    this.props.handleShowModal(this.props.title);
   };
 
   render()
@@ -51,7 +51,8 @@ class HornedBeast extends React.Component{
           className='img-responsive'
           
         />
-        <Card.Body>
+        {/* When the body of a beast card is clicked change state of app.js*/}
+        <Card.Body onClick={this.handleBeastClick}>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>

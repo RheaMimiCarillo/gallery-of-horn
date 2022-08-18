@@ -19,20 +19,16 @@ class SelectedBeast extends React.Component
   render()
   {
     return (
-      <>
-        <Modal 
-          // prop to pass `showModal` state to Modal
-          show={this.props.showModal}
-          // when modal is hidden, use handleHideModal to set the `showModal` state in App.js to `false'
-          onHide={this.props.handleHideModal}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>{this.props.selectedBeastName}</Modal.Title>
-          </Modal.Header>
-        </Modal>
-      </>
-        
-      
+      <Modal 
+        // prop to pass `showModal` state to Modal
+        show={this.props.showModal}
+        // when modal is hidden, use handleHideModal to set the `showModal` state in App.js to `false'
+        onHide={this.props.handleHideModal}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>{this.props.selectedBeastName}</Modal.Title>
+        </Modal.Header>
+      </Modal>      
     )
   }
 }

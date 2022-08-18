@@ -22,7 +22,7 @@
 
 .hornedBeast img {
     position: relative;
-    border: 1vh solid wheat;
+    border: 5px solid wheat;
     border-radius: 1%;
     display: inline-block;
 }
