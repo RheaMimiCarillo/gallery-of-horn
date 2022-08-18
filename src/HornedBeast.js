@@ -22,7 +22,7 @@ class HornedBeast extends React.Component{
   {
     // code that wil update the state of the favorites counter
     
-    // built in method to set state
+    // built in React method to set state
     this.setState
     ({
       favorites: this.state.favorites + 1,

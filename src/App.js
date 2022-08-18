@@ -1,8 +1,5 @@
 import React from 'react';
 
-// import modal from react bootstrap
-import Modal from 'react-bootstrap/Modal';
-
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -69,6 +66,7 @@ class App extends React.Component
           // pass in beasts data
           beastsJSON={beastsJSON}
 
+          // note from tired self: instead of making individual states for each bit of data I want to render in the Modal thingy, just use a property as a unique key from the JSON and then have the SelectedBeast component get the rest of the data from the array using that key.. also, see if this is a good idea in the morning, because I'd have to run a loop to look for each lil bit of data using the key
           // pass in name of the beast user clicked on
           selectedBeastName={this.selectedBeastName}
 
