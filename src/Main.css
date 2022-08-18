@@ -1,11 +1,13 @@
 *{
     box-sizing: border-box;
 }
-/* maybe make this not flex and space around like this? */
+
 main {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; */
+
+    background-color: antiquewhite;
 }
 
 /* use media queries */

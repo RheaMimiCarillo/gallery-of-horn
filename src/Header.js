@@ -1,6 +1,7 @@
 // renders <Main> element
 
 import React from 'react';
+import './Header.css'
 
 class Header extends React.Component{
   render()
@@ -8,6 +9,8 @@ class Header extends React.Component{
     return(
         <header>
           <h1>Gallery of Horn</h1>
+          <nav>
+          </nav>
         </header>
     );
   }

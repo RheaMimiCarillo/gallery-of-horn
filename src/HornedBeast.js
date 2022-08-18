@@ -1,4 +1,5 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
 
 // import Card component
 import Card from 'react-bootstrap/Card';
@@ -9,7 +10,8 @@ class HornedBeast extends React.Component{
   constructor(props)
   {
     super(props)
-    this.state = {
+    this.state = 
+    {
       // count number of times beast image is clicked
       favorites: 0,
     }
@@ -27,42 +29,36 @@ class HornedBeast extends React.Component{
     });
   };
 
+  // event handler to toggle the handleShowModal() function in App.js
+  handleBeastClick = () =>
+  {
+    // reference to the handleShowModal() function passed down from props
+    this.props.handleShowModal(this.props.selectedBeastName);
+  };
+
   render()
   {
     return(
-      
-      // <div className="hornedBeast">
-      //   {/* title of animal */}
-      //   <h2>{this.props.title}</h2>
-      //   <div className='imgContainer'>
-      //     {/* image of animal */}
-      //     <img 
-      //       src={this.props.imageURL} 
-      //       alt={this.props.description} 
-      //       title={this.props.title}
-      //       favorites={this.state.favorites}
-      //       onClick={this.handleFavorites}
-      //     />
-      //     {/* p to display votes for each beast */}
-      //     <p className='heart'>🖤{this.state.favorites}</p>
-      //   </div>
-      //   {/* description of animal */}
-      //   <p>{this.props.description}</p>
-      // </div>
-      <Card className='hornedBeast' style={{width: '18rem'}}>
+      <Col className='mt-4'>
+        <Card className='hornedBeast h-100 p-1'>
         <Card.Img 
           variant='top' 
           src={this.props.imageURL} 
           alt={this.props.description}
           favorites={this.state.favorites}
           onClick={this.handleFavorites}
+          // make images take up full width
+          className='img-responsive'
+          
         />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
-          <Card.Text>🖤{this.state.favorites}</Card.Text>
+          <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
         </Card.Body>
       </Card>
+      </Col>
+      
     );
   }
 }

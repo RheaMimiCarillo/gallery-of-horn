@@ -1,78 +1,48 @@
 // renders <Main> element
 import React from 'react';
 import HornedBeast from './HornedBeast';
-// import Card from 'react-bootstrap/Card';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
+import './Main.css';
 
 
 
 // render copies of HornedBeast component
 class Main extends React.Component{
-/*
-  // wasn't sure whether to make this global or put it in the class
-  beastArr = 
-    [
-      {
-        "_id": 1,
-        "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
-        "title": "UniWhal",
-        "description": "A unicorn and a narwhal nuzzling their horns",
-        "keyword": "narwhal",
-        "horns": 1
-      },
-
-      {
-        "_id": 2,
-        "image_url": "https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80",
-        "title": "Rhino Family",
-        "description": "Parent rhino with two babies",
-        "keyword": "rhino",
-        "horns": 2
-      },
-
-      {
-        "_id": 3,
-        "image_url": "https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg",
-        "title": "Unicorn Head",
-        "description": "Someone wearing a very silly unicorn head mask",
-        "keyword": "unicorn",
-        "horns": 1
-      }
-    ];
-*/
 
 // this is supposed to save the json array into a local array
 // will test when I get to my laptop charger
 importedBeastArr = this.props.beastsJSON;
 
   render()
-  { 
+  {
     return(
       // add bootstrap <Col> and <Row>
       // use bootstrap class to style the <Col> and <Row> to make them responsive
       // give the Card a class of 'h-100' to have them take up the entire vertical space of each card
-      <main>
-        {
-          this.importedBeastArr.map((currentBeast, idx) =>
-          (
-            <HornedBeast
-              // react likes each component to have a key 
-              key={idx}
-              title = {currentBeast.title}
-              imageURL = {currentBeast.image_url}
-              description = {currentBeast.description}
-            />
-          ))
-        }
-        {/* let beastArr2 = [];
 
-        beastArr.forEach((beast,idx) => {
-        beastArr2.push(
-          <HornedBeast
-            title = {beast.title}
-            imageURL = {beast.image_url}
-            description = {beast.description}
-          />
-        )} */}
+      // Map over the JSON data in your Main component to render each beast
+      <main>
+        <Container>
+          <Row xs={1} sm={2} md={3} lg={4} xl={5} xxl={6}>
+          {
+            this.importedBeastArr.map((currentBeast, idx) =>
+            (
+              <HornedBeast
+                // react likes each component to have a key 
+                key={idx}
+                title = {currentBeast.title}
+                imageURL = {currentBeast.image_url}
+                description = {currentBeast.description}
+                // pass in reference to handleShowModal() from App.js
+                handleShowModal={this.props.handleShowModal}
+              />
+            ))
+          }
+          </Row>
+        </Container>
       </main>
     );
   }

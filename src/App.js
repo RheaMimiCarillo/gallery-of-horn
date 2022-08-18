@@ -1,13 +1,15 @@
-
 import React from 'react';
-import './App.css';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
-import beastsJSON from './data.json';
 
 // import modal from react bootstrap
 import Modal from 'react-bootstrap/Modal';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+
+// Import the `data.json` file into your `App`
+import beastsJSON from './data.json';
+
+import './App.css';
 
 class App extends React.Component
 {
@@ -17,29 +19,54 @@ class App extends React.Component
     this.state = {
       // set to false, by default, so it doesn't show up until you click on it
       showModal: false,
+      // title of the selected beast to do Modal things with
+      selectedBeastName: '',
     }
   }
 
   // function to set state of showModal to true
+  // send reference to this to Main
+  handleShowModal = selectedBeastName =>
+  {
+    this.setState(
+    {
+      showModal: true,
+      selectedBeastName: selectedBeastName,
+    });
+  }
 
-  // function to set state of showwModal to false
+  // function to set state of showModal to false
+  // send reference to this to Main
+  handleHideModal = () =>
+  {
+    this.setState(
+    {
+      showModal: false,
+    });
+  }
 
   // use the State in App.js to render a SelectedBeast in a modal window
-  
-  // TODO: renders a `Header`, `Footer`, and `Main` in the App component
   render()
   {
     return (
       <>
         <Header/>
-        <Main beastsJSON={beastsJSON} />
-        <Footer/>
-        <Modal 
-          // display the modal or hide the modal
-          show={this.state.showModal}
+        <Main 
+          // send imported data into the Main component
+          beastsJSON={beastsJSON} 
 
-          // when modal hides, set state to false
-          onHIde={this.handleHideModal}
+          // Send a function into your Main component that allows the user to update state in the App
+
+          handleShowModal={this.handleShowModal}
+
+        />
+        <Footer/>
+        {/* move Modal to the Selected Beast js file and use the shorthand <Modal/> to pass in props to it */}
+        <Modal 
+          // prop to pass `showModal` state to Modal
+          show={this.state.showModal}
+          // when modal is hidden, use handleHideModal to set the `showModal` state in App.js to `false'
+          onHide={this.handleHideModal}
         />
       </>
     );
