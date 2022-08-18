@@ -10,7 +10,8 @@ class HornedBeast extends React.Component{
   constructor(props)
   {
     super(props)
-    this.state = {
+    this.state = 
+    {
       // count number of times beast image is clicked
       favorites: 0,
     }
@@ -28,6 +29,13 @@ class HornedBeast extends React.Component{
     });
   };
 
+  // event handler to toggle the handleShowModal() function in App.js
+  handleBeastClick = () =>
+  {
+    // reference to the handleShowModal() function passed down from props
+    this.props.handleShowModal(this.props.selectedBeastName);
+  };
+
   render()
   {
     return(
@@ -38,10 +46,10 @@ class HornedBeast extends React.Component{
           src={this.props.imageURL} 
           alt={this.props.description}
           favorites={this.state.favorites}
-
+          onClick={this.handleFavorites}
           // make images take up full width
           className='img-responsive'
-          onClick={this.handleFavorites}
+          
         />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>

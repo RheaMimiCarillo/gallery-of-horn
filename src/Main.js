@@ -17,8 +17,7 @@ class Main extends React.Component{
 importedBeastArr = this.props.beastsJSON;
 
   render()
-  { 
-
+  {
     return(
       // add bootstrap <Col> and <Row>
       // use bootstrap class to style the <Col> and <Row> to make them responsive
@@ -37,6 +36,8 @@ importedBeastArr = this.props.beastsJSON;
                 title = {currentBeast.title}
                 imageURL = {currentBeast.image_url}
                 description = {currentBeast.description}
+                // pass in reference to handleShowModal() from App.js
+                handleShowModal={this.props.handleShowModal}
               />
             ))
           }

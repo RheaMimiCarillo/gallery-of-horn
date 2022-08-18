@@ -19,16 +19,33 @@ class App extends React.Component
     this.state = {
       // set to false, by default, so it doesn't show up until you click on it
       showModal: false,
+      // title of the selected beast to do Modal things with
+      selectedBeastName: '',
     }
   }
 
   // function to set state of showModal to true
+  // send reference to this to Main
+  handleShowModal = selectedBeastName =>
+  {
+    this.setState(
+    {
+      showModal: true,
+      selectedBeastName: selectedBeastName,
+    });
+  }
 
-  // function to set state of showwModal to false
+  // function to set state of showModal to false
+  // send reference to this to Main
+  handleHideModal = () =>
+  {
+    this.setState(
+    {
+      showModal: false,
+    });
+  }
 
   // use the State in App.js to render a SelectedBeast in a modal window
-  
-  // TODO: renders a `Header`, `Footer`, and `Main` in the App component
   render()
   {
     return (
@@ -42,21 +59,15 @@ class App extends React.Component
 
           handleShowModal={this.handleShowModal}
 
-          handleHideModal={this.handleHideModal}
-
         />
         <Footer/>
+        {/* move Modal to the Selected Beast js file and use the shorthand <Modal/> to pass in props to it */}
         <Modal 
-          // display the modal or hide the modal
+          // prop to pass `showModal` state to Modal
           show={this.state.showModal}
-
-          // when modal hides, set state to false
+          // when modal is hidden, use handleHideModal to set the `showModal` state in App.js to `false'
           onHide={this.handleHideModal}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>{this.state.name}</Modal.Title>
-          </Modal.Header>
-        </Modal>
+        />
       </>
     );
   }
