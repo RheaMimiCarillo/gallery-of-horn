@@ -51,7 +51,8 @@ class HornedBeast extends React.Component{
           className='img-responsive'
           
         />
-        <Card.Body>
+        {/* When the body of a beast card is clicked change state of app.js*/}
+        <Card.Body onClick={this.props.handleShowModal}>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
