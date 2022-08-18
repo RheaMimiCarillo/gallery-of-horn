@@ -33,7 +33,7 @@ class HornedBeast extends React.Component{
   handleBeastClick = () =>
   {
     // reference to the handleShowModal() function passed down from props
-    this.props.handleShowModal(this.props.selectedBeastName);
+    this.props.handleShowModal(this.props.title);
   };
 
   render()
@@ -52,7 +52,7 @@ class HornedBeast extends React.Component{
           
         />
         {/* When the body of a beast card is clicked change state of app.js*/}
-        <Card.Body onClick={this.props.handleShowModal}>
+        <Card.Body onClick={this.handleBeastClick}>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
