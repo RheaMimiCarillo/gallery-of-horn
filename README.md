@@ -130,3 +130,15 @@ How long you spent working on this assignment
 ### Resources
 
 - [data.json](https://codefellows.github.io/code-301-guide/curriculum/class-02/lab/assets/data.json)
+
+### Lab Class-03 Modal
+
+Feature #1: Display a Modal
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 3:30
+
+Finish time: _____
+
+Actual time needed to complete: _____
