@@ -18,15 +18,16 @@ class App extends React.Component
     super(props);
     this.state = {
       // set to false, by default, so it doesn't show up until you click on it
-      showModal: false,
+      showModalBeast: false,
       // title of the selected beast to do Modal things with
-      selectedBeastName: '',
+      modalBeastId: -1,
+      cardBeastIDs: [],
     }
   }
 
   // function to set state of showModal to true
   // send reference to this to Main
-  handleShowModal = selectedBeastName =>
+  handleShowModalBeast = selectedBeastName =>
   {
     this.setState(
     {
@@ -37,13 +38,17 @@ class App extends React.Component
 
   // function to set state of showModal to false
   // send reference to this to Main
-  handleHideModal = () =>
+  handleHideModalBeast = () =>
   {
     this.setState(
     {
       showModal: false,
     });
   }
+
+  handleSelectBeastToRender = 
+
+  handleSelectBeastsFromDropdownMenu = 
 
   // use the State in App.js to render a SelectedBeast in a modal window
   render()
@@ -57,7 +62,7 @@ class App extends React.Component
 
           // pass in reference to event handler that makes the modal thingy appear
           handleShowModal={this.handleShowModal}
-
+          modalBeastId={this.modalBeastId}
         />
         <Footer/>
 

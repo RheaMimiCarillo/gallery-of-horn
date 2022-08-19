@@ -18,6 +18,10 @@ importedBeastArr = this.props.beastsJSON;
 
   render()
   {
+    let beastToRender = this.props.beastsJSON.filter(beast => 
+    {
+      // do stuff to get the beasts from modalBeastIDs[]
+    })
     return(
       // add bootstrap <Col> and <Row>
       // use bootstrap class to style the <Col> and <Row> to make them responsive
@@ -28,6 +32,7 @@ importedBeastArr = this.props.beastsJSON;
         <Container>
           <Row xs={1} sm={2} md={3} lg={4} xl={5} xxl={6}>
           {
+            // this stuff is gonna go in the method I use to make an array of <HornedBeast> objects to render (beastToRender)
             this.importedBeastArr.map((currentBeast, idx) =>
             (
               <HornedBeast

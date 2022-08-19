@@ -131,6 +131,7 @@ How long you spent working on this assignment
 
 - [data.json](https://codefellows.github.io/code-301-guide/curriculum/class-02/lab/assets/data.json)
 
+
 ### Lab Class-03 Modal
 
 Feature #1: Display a Modal
