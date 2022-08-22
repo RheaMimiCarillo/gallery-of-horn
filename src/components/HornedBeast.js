@@ -30,6 +30,11 @@ class HornedBeast extends React.Component
     });
   };
 
+  handleCardBodyClick = () =>
+  {
+    this.props.handleModalBeastId(this.props.key);
+  };
+
   render()
   {
     return(
@@ -45,7 +50,7 @@ class HornedBeast extends React.Component
           className='img-responsive'
         />
         {/* When the body of a beast card is clicked change state of app.js*/}
-        <Card.Body>
+        <Card.Body onClick={this.handleCardBodyClick}>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>

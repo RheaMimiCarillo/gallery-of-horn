@@ -17,17 +17,15 @@ class SelectedBeast extends React.Component
             onHide={this.props.onHide}
         >
           <Modal.Header closeButton>
-            <Modal.Title>beast title goes here{this.props.beastsJSON[0].title}</Modal.Title>
+            <Modal.Title>{this.props.beastsJSON[0].title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>beast image, description, and favorites go here
+          <Modal.Body>
             <img 
-              src={this.props.beastsJSON[0].image_url} 
-              alt={this.props.beastsJSON[0].description}
+              src={this.props.beastsJSON[this.props.modalBeastId].image_url} 
+              alt={this.props.beastsJSON[this.props.modalBeastId].description}
             >
             </img>
-            <p>{this.props.beastsJSON[0].description}</p>
-
-            
+            <p>{this.props.beastsJSON[this.props.modalBeastId].description}</p>
           </Modal.Body>
         </Modal>
       </>  

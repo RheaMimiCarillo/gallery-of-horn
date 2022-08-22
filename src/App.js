@@ -29,14 +29,23 @@ class App extends React.Component
     }
   }
 
-  // function to set state of showModal to true
-  // send reference to this to Main
-  handleModalBeast = selectedBeastName =>
+  // event handler to toggle the showModalBeast flag
+  handleModalBeast = () =>
   {
     this.setState(
     {
       // change the showModalBeast state to the opposite of whatever it is currently
-      showModalBeast: !this.state.showModalBeast
+      showModalBeast: !this.state.showModalBeast,
+
+    });
+  }
+
+  // event handler to update the id of the SelectedBeast to render
+  handleModalBeastId = modalBeastId =>
+  {
+    this.setState(
+    {
+      modalBeastId: modalBeastId
     });
   }
 
@@ -56,15 +65,23 @@ class App extends React.Component
           beastsJSON={this.state.importedBeastArr}
 
           // pass in reference to event handler that makes the modal thingy appear
-          handleShowModalBeast={this.handleModalBeast}
-          modalBeastId={this.state.modalBeastId}
+          handleModalBeast={this.handleModalBeast}
+          handleModalBeastId={this.handleModalBeastId}
         />
         <Footer/>
 
-        <SelectedBeast 
+        <SelectedBeast
+          // flag to display the SelectedBeast Modal
           show={this.state.showModalBeast}
+
+          // event handler that calls handleModalBeast when this element hides
           onHide={this.handleModalBeast}
+
+          // the array of beasts that I save to the state of App.js
+          // going to use this to render the beast I select
           beastsJSON={this.state.importedBeastArr}
+
+          modalBeastId={this.state.modalBeastId}
         />
       </>
     );
