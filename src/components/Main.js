@@ -5,16 +5,16 @@ import HornedBeast from './HornedBeast';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import './Main.css';
+import '../styles/Main.css';
 
 
 
 // render copies of HornedBeast component
 class Main extends React.Component{
 
-// this is supposed to save the json array into a local array
-// will test when I get to my laptop charger
-importedBeastArr = this.props.beastsJSON;
+  // this is supposed to save the json array into a local array
+  // will test when I get to my laptop charger
+  importedBeastArr = this.props.beastsJSON;
 
   render()
   {

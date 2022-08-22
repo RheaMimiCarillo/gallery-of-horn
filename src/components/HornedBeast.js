@@ -3,9 +3,10 @@ import Col from 'react-bootstrap/Col';
 
 // import Card component
 import Card from 'react-bootstrap/Card';
-import './HornedBeast.css';
+import '../styles/HornedBeast.css';
 
-class HornedBeast extends React.Component{
+class HornedBeast extends React.Component
+{
   
   constructor(props)
   {

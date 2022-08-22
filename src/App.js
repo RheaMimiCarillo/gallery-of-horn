@@ -1,22 +1,23 @@
 import React from 'react';
 
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
-import SelectedBeast from './SelectedBeast'
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import SelectedBeast from './components/SelectedBeast'
 
 
 // Import the `data.json` file into your `App`
-import beastsJSON from './data.json';
+import beastsJSON from './json/data.json';
 
-import './App.css';
+import './styles/App.css';
 
 class App extends React.Component
 {
   constructor(props)
   {
     super(props);
-    this.state = {
+    this.state= 
+    {
       // set to false, by default, so it doesn't show up until you click on it
       showModalBeast: false,
       // title of the selected beast to do Modal things with
@@ -46,9 +47,9 @@ class App extends React.Component
     });
   }
 
-  handleSelectBeastToRender = 
+  // handleSelectBeastToRender = 
 
-  handleSelectBeastsFromDropdownMenu = 
+  // handleSelectBeastsFromDropdownMenu = 
 
   // use the State in App.js to render a SelectedBeast in a modal window
   render()
@@ -85,6 +86,7 @@ class App extends React.Component
     );
   }
 }
+
 
 export default App;
  
