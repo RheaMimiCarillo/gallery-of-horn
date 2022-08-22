@@ -18,10 +18,6 @@ class Main extends React.Component{
 
   render()
   {
-    let beastToRender = this.props.beastsJSON.filter(beast => 
-    {
-      // do stuff to get the beasts from modalBeastIDs[]
-    })
     return(
       // add bootstrap <Col> and <Row>
       // use bootstrap class to style the <Col> and <Row> to make them responsive
@@ -41,8 +37,8 @@ class Main extends React.Component{
                 title = {currentBeast.title}
                 imageURL = {currentBeast.image_url}
                 description = {currentBeast.description}
-                // pass in reference to handleShowModal() from App.js
-                handleShowModal={this.props.handleShowModal}
+                // pass in reference to handleShowModalBeast() from App.js
+                handleShowModalBeast={this.props.handleShowModalBeast}
               />
             ))
           }

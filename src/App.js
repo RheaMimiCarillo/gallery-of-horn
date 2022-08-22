@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast'
 
 
-// Import the `data.json` file into your `App`
+// // Import the `data.json` file into your `App`
 import beastsJSON from './json/data.json';
 
 import './styles/App.css';
@@ -16,34 +16,27 @@ class App extends React.Component
   constructor(props)
   {
     super(props);
-    this.state= 
+    this.state=
     {
       // set to false, by default, so it doesn't show up until you click on it
-      showModalBeast: false,
+      showModalBeast: true,
       // title of the selected beast to do Modal things with
-      modalBeastId: -1,
-      cardBeastIDs: [],
+      modalBeastId: 0,
+
+      // array of all beasts
+      // may keep track of favorites here by adding a {favorites: }property to each object
+      importedBeastArr: beastsJSON
     }
   }
 
   // function to set state of showModal to true
   // send reference to this to Main
-  handleShowModalBeast = selectedBeastName =>
+  handleModalBeast = selectedBeastName =>
   {
     this.setState(
     {
-      showModal: true,
-      selectedBeastName: selectedBeastName,
-    });
-  }
-
-  // function to set state of showModal to false
-  // send reference to this to Main
-  handleHideModalBeast = () =>
-  {
-    this.setState(
-    {
-      showModal: false,
+      // change the showModalBeast state to the opposite of whatever it is currently
+      showModalBeast: !this.state.showModalBeast
     });
   }
 
@@ -57,30 +50,21 @@ class App extends React.Component
     return (
       <>
         <Header/>
+        
         <Main 
           // send imported data into the Main component
-          beastsJSON={beastsJSON} 
+          beastsJSON={this.state.importedBeastArr}
 
           // pass in reference to event handler that makes the modal thingy appear
-          handleShowModal={this.handleShowModal}
-          modalBeastId={this.modalBeastId}
+          handleShowModalBeast={this.handleModalBeast}
+          modalBeastId={this.state.modalBeastId}
         />
         <Footer/>
 
-        {/* pass props I want to use on the modal thing into <SelectedBeast /> */}
-        <SelectedBeast
-          // pass in beasts data
-          beastsJSON={beastsJSON}
-
-          // note from tired self: instead of making individual states for each bit of data I want to render in the Modal thingy, just use a property as a unique key from the JSON and then have the SelectedBeast component get the rest of the data from the array using that key.. also, see if this is a good idea in the morning, because I'd have to run a loop to look for each lil bit of data using the key
-          // pass in name of the beast user clicked on
-          selectedBeastName={this.selectedBeastName}
-
-          // pass in showModal state
-          show={this.state.showModal}
-
-          // pass in reference to handleHideModal (for when a user wants to exit out of a Modal thingy)
-          onHide={this.handleHideModal}
+        <SelectedBeast 
+          show={this.state.showModalBeast}
+          onHide={this.handleModalBeast}
+          beastsJSON={this.state.importedBeastArr}
         />
       </>
     );
