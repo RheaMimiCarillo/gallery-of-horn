@@ -30,7 +30,7 @@ class Main extends React.Component{
 
   handleSelectHorns = e =>
   {
-    this.props.handleSelectHorns(this.target.value)
+    this.props.handleSelectHorns(e.target.value)
   }
   
   getOptions = () =>
@@ -51,7 +51,7 @@ class Main extends React.Component{
   //getOptionsList = handleOptions => handleOptions.map(beast => <option>beast.horns</option>);
   render()
   {
-    let optionsList = this.state.optionsArr.map(num => <option key={num}>{num}</option>);
+    let optionsList = this.state.optionsArr.map(num => <option value={num} key={num}>{num}</option>);
     return(
       // add bootstrap <Col> and <Row>
       // use bootstrap class to style the <Col> and <Row> to make them responsive
@@ -61,10 +61,13 @@ class Main extends React.Component{
       <main>
         <Form onSubmit={this.handleFormSubmit}>
           <Form.Group>
-            <Form.Label>Select Beasts by Horns:
+            <Form.Label htmlFor="chooseHorns">Select Beasts by Horns:
               <Form.Select
                 onChange={this.handleSelectHorns}
+                id="chooseHorns" 
+                name="chooseHorns"
               >
+                <option value={10} key={0}>reset</option>
                 {optionsList}
               </Form.Select>
             </Form.Label>

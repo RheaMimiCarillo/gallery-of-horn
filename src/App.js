@@ -56,15 +56,17 @@ class App extends React.Component
   handleSelectBeastsByHorns = () =>
   {
     let filter = this.state.importedBeastArr.filter(beast => beast.horns===this.state.selectedHorns);
+    console.log('horns in state in handleSelectBeastsByHorns: ', this.state.selectedHorns);
+    console.log('filter: ', filter);
     this.setState(
     {
       filteredBeastArr: filter,
     });
-    console.log('filter: ', filter);
   }
 
   handleSelectHorns = horns =>
   {
+    console.log('horns change:',horns);
     this.setState(
     {
       selectedHorns: horns,

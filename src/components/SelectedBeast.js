@@ -12,7 +12,7 @@ class SelectedBeast extends React.Component
   render()
   {
     let currentBeast = this.props.beastsJSON.find(beast => beast._id === this.props.modalBeastId); 
-    console.log(currentBeast);
+    //console.log(currentBeast);
     return (
       <>
         <Modal 
