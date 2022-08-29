@@ -52,10 +52,11 @@ class HornedBeast extends React.Component
           className='img-fluid'
         />
         {/* When the body of a beast card is clicked change state of app.js*/}
-        <Card.Body onClick={this.handleCardBodyClick}>
+        <Card.Body onClick={this.handleCardBodyClick} 
+            className="beastBody">
           <Card.Title>{this.props.currentBeast.title}</Card.Title>
           <Card.Text>{this.props.currentBeast.description}</Card.Text>
-          <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
+          <Card.Text className='heart' onClick={this.handleFavorites}>🖤{this.state.favorites}</Card.Text>
         </Card.Body>
         </Card>
       </Col>
