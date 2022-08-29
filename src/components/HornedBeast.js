@@ -32,7 +32,9 @@ class HornedBeast extends React.Component
 
   handleCardBodyClick = () =>
   {
-    this.props.handleModalBeastId(this.props.key);
+    this.props.handleModalBeastId(this.props.currentBeast._id);
+    console.log('handle modal beast ID: ', this.props.currentBeast._id);
+    this.props.handleModalBeast();
   };
 
   render()
@@ -42,17 +44,17 @@ class HornedBeast extends React.Component
         <Card className='hornedBeast h-100 p-1'>
         <Card.Img 
           variant='top' 
-          src={this.props.imageURL} 
-          alt={this.props.description}
+          src={this.props.currentBeast.image_url} 
+          alt={this.props.currentBeast.description}
           favorites={this.state.favorites}
           onClick={this.handleFavorites}
           // make images take up full width
-          className='img-responsive'
+          className='img-fluid'
         />
         {/* When the body of a beast card is clicked change state of app.js*/}
         <Card.Body onClick={this.handleCardBodyClick}>
-          <Card.Title>{this.props.title}</Card.Title>
-          <Card.Text>{this.props.description}</Card.Text>
+          <Card.Title>{this.props.currentBeast.title}</Card.Title>
+          <Card.Text>{this.props.currentBeast.description}</Card.Text>
           <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
         </Card.Body>
         </Card>

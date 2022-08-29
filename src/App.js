@@ -19,9 +19,9 @@ class App extends React.Component
     this.state=
     {
       // set to false, by default, so it doesn't show up until you click on it
-      showModalBeast: true,
+      showModalBeast: false,
       // title of the selected beast to do Modal things with
-      modalBeastId: 0,
+      modalBeastId: 1,
 
       // array of all beasts
       // may keep track of favorites here by adding a {favorites: }property to each object
@@ -36,7 +36,6 @@ class App extends React.Component
     {
       // change the showModalBeast state to the opposite of whatever it is currently
       showModalBeast: !this.state.showModalBeast,
-
     });
   }
 
@@ -45,7 +44,7 @@ class App extends React.Component
   {
     this.setState(
     {
-      modalBeastId: modalBeastId
+      modalBeastId: modalBeastId,
     });
   }
 
@@ -53,7 +52,6 @@ class App extends React.Component
 
   // handleSelectBeastsFromDropdownMenu = 
 
-  // use the State in App.js to render a SelectedBeast in a modal window
   render()
   {
     return (
@@ -80,7 +78,8 @@ class App extends React.Component
           // the array of beasts that I save to the state of App.js
           // going to use this to render the beast I select
           beastsJSON={this.state.importedBeastArr}
-
+          
+          // `_id` property of the beast to display in a modal
           modalBeastId={this.state.modalBeastId}
         />
       </>

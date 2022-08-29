@@ -7,9 +7,11 @@ import '../styles/SelectedBeast.css'
 
 class SelectedBeast extends React.Component
 {
-
+  //currentBeast = this.props.beastsJSON.find(beast => beast._id === this.props.modalBeastId); 
   render()
   {
+    let currentBeast = this.props.beastsJSON.find(beast => beast._id === this.props.modalBeastId); 
+    console.log(currentBeast);
     return (
       <>
         <Modal 
@@ -17,15 +19,16 @@ class SelectedBeast extends React.Component
             onHide={this.props.onHide}
         >
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.beastsJSON[0].title}</Modal.Title>
+            <Modal.Title>{currentBeast.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <img 
-              src={this.props.beastsJSON[this.props.modalBeastId].image_url} 
-              alt={this.props.beastsJSON[this.props.modalBeastId].description}
+              src={currentBeast.image_url} 
+              alt={currentBeast.description}
+              className="img-fluid"
             >
             </img>
-            <p>{this.props.beastsJSON[this.props.modalBeastId].description}</p>
+            <p>{currentBeast.description}</p>
           </Modal.Body>
         </Modal>
       </>  

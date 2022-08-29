@@ -24,15 +24,14 @@ class Main extends React.Component{
           <Row xs={1} sm={2} md={3} lg={4} xl={5} xxl={6}>
           {
             // this stuff is gonna go in the method I use to make an array of <HornedBeast> objects to render (beastToRender)
-            this.props.beastsJSON.map((currentBeast) =>
+            this.props.beastsJSON.map(currentBeast =>
             (
               <HornedBeast
                 // react likes each component to have a key 
                 // the _id property starts at 1, not 0
                 key={currentBeast._id}
-                title = {currentBeast.title}
-                imageURL = {currentBeast.image_url}
-                description = {currentBeast.description}
+                id={currentBeast._id}
+                currentBeast={currentBeast}
                 // pass in reference to handleModalBeast from App.js
                 handleModalBeast={this.props.handleModalBeast}
                 handleModalBeastId={this.props.handleModalBeastId}
