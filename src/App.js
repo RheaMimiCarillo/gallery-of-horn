@@ -3,7 +3,8 @@ import React from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import SelectedBeast from './components/SelectedBeast'
+import SelectedBeast from './components/SelectedBeast';
+
 
 
 // // Import the `data.json` file into your `App`
@@ -25,7 +26,10 @@ class App extends React.Component
 
       // array of all beasts
       // may keep track of favorites here by adding a {favorites: }property to each object
-      importedBeastArr: beastsJSON
+      importedBeastArr: beastsJSON,
+      filteredBeastArr: [],
+
+      selectedHorns: ''
     }
   }
 
@@ -48,9 +52,24 @@ class App extends React.Component
     });
   }
 
-  // handleSelectBeastToRender = 
+  // make a filtered array of HornedBeasts 
+  handleSelectBeastsByHorns = () =>
+  {
+    let filter = this.state.importedBeastArr.filter(beast => beast.horns===this.state.selectedHorns);
+    this.setState(
+    {
+      filteredBeastArr: filter,
+    });
+    console.log('filter: ', filter);
+  }
 
-  // handleSelectBeastsFromDropdownMenu = 
+  handleSelectHorns = horns =>
+  {
+    this.setState(
+    {
+      selectedHorns: horns,
+    });
+  }
 
   render()
   {
@@ -65,6 +84,8 @@ class App extends React.Component
           // pass in reference to event handler that makes the modal thingy appear
           handleModalBeast={this.handleModalBeast}
           handleModalBeastId={this.handleModalBeastId}
+          handleSelectBeastsByHorns={this.handleSelectBeastsByHorns}
+          handleSelectHorns={this.handleSelectHorns}
         />
         <Footer/>
 

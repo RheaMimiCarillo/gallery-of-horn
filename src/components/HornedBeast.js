@@ -49,7 +49,7 @@ class HornedBeast extends React.Component
           favorites={this.state.favorites}
           onClick={this.handleFavorites}
           // make images take up full width
-          className='img-fluid'
+          className='img-fluid' 
         />
         {/* When the body of a beast card is clicked change state of app.js*/}
         <Card.Body onClick={this.handleCardBodyClick} 

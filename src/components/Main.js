@@ -5,14 +5,53 @@ import HornedBeast from './HornedBeast';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button'
+
 import '../styles/Main.css';
 
 
 
 // render copies of HornedBeast component
 class Main extends React.Component{
+
+  constructor(props)
+  {
+    super(props);
+    this.state=
+    {
+      optionsArr: [1,2,3,100], 
+    }
+  }
+  handleFormSubmit = e =>
+  {
+    this.props.handleSelectBeastsByHorns(e.target.value);
+  }
+
+  handleSelectHorns = e =>
+  {
+    this.props.handleSelectHorns(this.target.value)
+  }
+  
+  getOptions = () =>
+  {
+    let optionsArr = [];
+    this.props.beastsJSON.forEach( beast => {
+      if(!optionsArr.includes(beast.horns))
+      {
+        optionsArr.push(beast.horns);
+        console.log(optionsArr);
+      }
+    });
+    this.setState({
+      optionsArr: optionsArr,
+    })
+  }
+
+  //getOptionsList = handleOptions => handleOptions.map(beast => <option>beast.horns</option>);
   render()
   {
+    let optionsList = this.state.optionsArr.map(num => <option key={num}>{num}</option>);
     return(
       // add bootstrap <Col> and <Row>
       // use bootstrap class to style the <Col> and <Row> to make them responsive
@@ -20,6 +59,21 @@ class Main extends React.Component{
 
       // Map over the JSON data in your Main component to render each beast
       <main>
+        <Form onSubmit={this.handleFormSubmit}>
+          <Form.Group>
+            <Form.Label>Select Beasts by Horns:
+              <Form.Select
+                onChange={this.handleSelectHorns}
+              >
+                {optionsList}
+              </Form.Select>
+            </Form.Label>
+            <Button type="submit">Submit</Button>
+          </Form.Group>
+          
+          
+          
+        </Form>
         <Container>
           <Row xs={1} sm={2} md={3} lg={4} xl={5} xxl={6}>
           {

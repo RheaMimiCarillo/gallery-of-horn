@@ -8,6 +8,7 @@ import '../styles/SelectedBeast.css'
 class SelectedBeast extends React.Component
 {
   //currentBeast = this.props.beastsJSON.find(beast => beast._id === this.props.modalBeastId); 
+  
   render()
   {
     let currentBeast = this.props.beastsJSON.find(beast => beast._id === this.props.modalBeastId); 
