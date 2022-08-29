@@ -1,9 +1,10 @@
 // renders <Main> element
 
 import React from 'react';
-import './Header.css'
+import '../styles/Header.css'
 
-class Header extends React.Component{
+class Header extends React.Component
+{
   render()
   {
     return(

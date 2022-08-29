@@ -3,9 +3,10 @@ import Col from 'react-bootstrap/Col';
 
 // import Card component
 import Card from 'react-bootstrap/Card';
-import './HornedBeast.css';
+import '../styles/HornedBeast.css';
 
-class HornedBeast extends React.Component{
+class HornedBeast extends React.Component
+{
   
   constructor(props)
   {
@@ -29,11 +30,11 @@ class HornedBeast extends React.Component{
     });
   };
 
-  // event handler to toggle the handleShowModal() function in App.js
-  handleBeastClick = () =>
+  handleCardBodyClick = () =>
   {
-    // reference to the handleShowModal() function passed down from props
-    this.props.handleShowModal(this.props.title);
+    this.props.handleModalBeastId(this.props.currentBeast._id);
+    console.log('handle modal beast ID: ', this.props.currentBeast._id);
+    this.props.handleModalBeast();
   };
 
   render()
@@ -43,23 +44,22 @@ class HornedBeast extends React.Component{
         <Card className='hornedBeast h-100 p-1'>
         <Card.Img 
           variant='top' 
-          src={this.props.imageURL} 
-          alt={this.props.description}
+          src={this.props.currentBeast.image_url} 
+          alt={this.props.currentBeast.description}
           favorites={this.state.favorites}
           onClick={this.handleFavorites}
           // make images take up full width
-          className='img-responsive'
-          
+          className='img-fluid' 
         />
         {/* When the body of a beast card is clicked change state of app.js*/}
-        <Card.Body onClick={this.handleBeastClick}>
-          <Card.Title>{this.props.title}</Card.Title>
-          <Card.Text>{this.props.description}</Card.Text>
-          <Card.Text className='heart'>🖤{this.state.favorites}</Card.Text>
+        <Card.Body onClick={this.handleCardBodyClick} 
+            className="beastBody">
+          <Card.Title>{this.props.currentBeast.title}</Card.Title>
+          <Card.Text>{this.props.currentBeast.description}</Card.Text>
+          <Card.Text className='heart' onClick={this.handleFavorites}>🖤{this.state.favorites}</Card.Text>
         </Card.Body>
-      </Card>
+        </Card>
       </Col>
-      
     );
   }
 }

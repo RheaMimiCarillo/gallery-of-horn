@@ -44,3 +44,11 @@
     cursor: pointer;
     border-color: aqua;
 }
+.heart:hover{
+    cursor: pointer;
+    background-color: azure;
+}
+.beastBody:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
