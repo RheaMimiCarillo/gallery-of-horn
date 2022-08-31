@@ -23,9 +23,9 @@ class Main extends React.Component{
       optionsArr: [1,2,3,100], 
     }
   }
-  handleFormSubmit = e =>
+  handleFormSubmit = () =>
   {
-    this.props.handleSelectBeastsByHorns(e.target.value);
+    this.props.handleSelectBeastsByHorns();
   }
 
   handleSelectHorns = e =>
@@ -33,22 +33,55 @@ class Main extends React.Component{
     this.props.handleSelectHorns(e.target.value)
   }
   
-  getOptions = () =>
-  {
-    let optionsArr = [];
-    this.props.beastsJSON.forEach( beast => {
-      if(!optionsArr.includes(beast.horns))
-      {
-        optionsArr.push(beast.horns);
-        console.log(optionsArr);
-      }
-    });
-    this.setState({
-      optionsArr: optionsArr,
-    })
-  }
+  // getOptions = () =>
+  // {
+  //   let optionsArr = [];
+  //   this.props.beastsJSON.forEach( beast => {
+  //     if(!optionsArr.includes(beast.horns))
+  //     {
+  //       optionsArr.push(beast.horns);
+  //       console.log(optionsArr);
+  //     }
+  //   });
+  //   this.setState({
+  //     optionsArr: optionsArr,
+  //   })
+  // }
 
   //getOptionsList = handleOptions => handleOptions.map(beast => <option>beast.horns</option>);
+  /*
+    write a switch
+
+    1. user selects a number onChange handler
+    2. user hits submit onSubmit handler
+      3. call the function that has the switch to filter the importedBeastArr to get a shallow copy of the array with only the selected beasts
+      4. update state with the filtered beasts, so the beast Cards can render with the filtered data
+
+
+    switch (expr) {
+  case 1:
+    ;
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+    console.log('Mangoes and papayas are $2.79 a pound.');
+    // expected output: "Mangoes and papayas are $2.79 a pound."
+    break;
+  case 100:
+  // case for when they don't input anything when submitting
+      break;
+  default:
+    // change the filtered array back to the default array
+    break;
+}
+
+filteredData function to make an array
+
+setState to set importedBeastArr: filteredData;
+  // use .filter() and use .find() to either display a 
+  */
   render()
   {
     let optionsList = this.state.optionsArr.map(num => <option value={num} key={num}>{num}</option>);

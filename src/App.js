@@ -29,7 +29,7 @@ class App extends React.Component
       importedBeastArr: beastsJSON,
       filteredBeastArr: [],
 
-      selectedHorns: ''
+      selectedHorns: 0,
     }
   }
 
@@ -55,7 +55,11 @@ class App extends React.Component
   // make a filtered array of HornedBeasts 
   handleSelectBeastsByHorns = () =>
   {
-    let filter = this.state.importedBeastArr.filter(beast => beast.horns===this.state.selectedHorns);
+    let filter = this.state.importedBeastArr.filter(beast =>
+    { 
+      console.log(beast);
+      return beast.horns===this.state.selectedHorns
+    });
     console.log('horns in state in handleSelectBeastsByHorns: ', this.state.selectedHorns);
     console.log('filter: ', filter);
     this.setState(
@@ -81,7 +85,7 @@ class App extends React.Component
         
         <Main 
           // send imported data into the Main component
-          beastsJSON={this.state.importedBeastArr}
+          beastsJSON={this.state.filteredBeastArr}
 
           // pass in reference to event handler that makes the modal thingy appear
           handleModalBeast={this.handleModalBeast}
