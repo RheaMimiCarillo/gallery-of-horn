@@ -23,9 +23,9 @@ class Main extends React.Component{
       optionsArr: [1,2,3,100], 
     }
   }
-  handleFormSubmit = () =>
+  handleFormSubmit = e =>
   {
-    this.props.handleSelectBeastsByHorns();
+    this.props.handleSelectBeastsByHorns(e.target.value);
   }
 
   handleSelectHorns = e =>
@@ -100,7 +100,7 @@ setState to set importedBeastArr: filteredData;
                 id="chooseHorns" 
                 name="chooseHorns"
               >
-                <option value={10} key={0}>reset</option>
+                <option value={''} key={0}>--</option>
                 {optionsList}
               </Form.Select>
             </Form.Label>
